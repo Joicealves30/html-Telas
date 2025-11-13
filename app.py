@@ -1,7 +1,17 @@
-# ...existing code...
 from flask import Flask, redirect, render_template, request, url_for
+from routes.estoque import estoque_route
+from routes.funcionarios import funcionario_route
+from routes.maquinarios import maquinario_route
 
 app = Flask(__name__)
+
+app.register_blueprint(estoque_route, url_prefix='/estoque')
+app.register_blueprint(funcionario_route, url_prefix='/funcionarios')
+app.register_blueprint(maquinario_route, url_prefix='/maquinarios')
+
+@app.route('/')
+def index():
+    return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

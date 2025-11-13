@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 50%;
     margin: 40px auto;
     background: white;
     border-radius: 12px;
@@ -100,4 +100,19 @@ form input, form select, form textarea {
     cursor: pointer;
     font-size: 18px;
 }
+form {
+    grid-template-columns: 1fr; /* só uma coluna */
+}
+form label, form input, form select, form textarea, .submit-btn {
+    grid-column: span 1; /* todos ocupam uma coluna só */
+}
+form input, form select, form textarea {
+    width: 90%;
+    grid-column: span 1;
+}
+form input, form select, form textarea {
+    grid-column: span 1;
+    max-width: 100%; /* para prevenir que ultrapassem o limite da coluna */
+}
+
 
