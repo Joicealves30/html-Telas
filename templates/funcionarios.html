@@ -12,7 +12,7 @@
       
         <header class="header">
             <span class="icon"> 
-                <img src="../img/farmer.PNG.png" alt="Ícone de Funcionários" width="50" height="50">
+                <img src=" {{ url_for('static', filename='img/farmer.png') }}" width="50" height="50">
             </span>
             <div>
                 <h1>Gerenciamento de Funcionários</h1>
@@ -49,7 +49,9 @@
         </section>
 
         <main class="main-content">
-            
+            <div class="search-bar">
+                <input type="text" id="busca" placeholder="Buscar por nome, cargo ou cultura...">
+            </div>
 
             <div class="table-container">
                 <table class="data-table">
@@ -65,8 +67,22 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="tabela-funcionarios">
-                        
+                    <tbody id="tabela-funcionarios"  method="POST" action="/funcionarios"> 
+                        {% for f in funcionarios %}
+                        <tr>
+                            <td>{{ f.nome }}</td>
+                            <td>{{ f.cargo }}</td>
+                            <td>{{ f.cultura }}</td>
+                            <td>44h</td>
+                            <td>R$ {{ f.salario }}</td>
+                            <td>{{ f.atribuicoes }}</td>
+                            <td>{{ f.data_cadastro.strftime('%d/%m/%Y') }}</td>
+                            <td>
+                                <button>Editar</button>
+                                <button>Excluir</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 50%;
+    width: 80%;
     margin: 40px auto;
     background: white;
     border-radius: 12px;
@@ -100,19 +100,27 @@ form input, form select, form textarea {
     cursor: pointer;
     font-size: 18px;
 }
-form {
-    grid-template-columns: 1fr; /* só uma coluna */
-}
-form label, form input, form select, form textarea, .submit-btn {
-    grid-column: span 1; /* todos ocupam uma coluna só */
-}
-form input, form select, form textarea {
-    width: 90%;
-    grid-column: span 1;
-}
-form input, form select, form textarea {
-    grid-column: span 1;
-    max-width: 100%; /* para prevenir que ultrapassem o limite da coluna */
+
+/* Centralizar tela de login */
+body.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5fff5;
+    margin: 0;
 }
 
+/* Caixa branca do login */
+.login-container {
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}

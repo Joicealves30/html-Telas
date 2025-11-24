@@ -41,7 +41,7 @@
 
 
         button {
-            background-color: green;
+            background-color: #2e8b57;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -53,23 +53,15 @@
 
 
         button:hover {
-            background-color: darkgreen;
+            background-color: #1e6b40;
         }
 
 
         .mensagem {
             margin-top: 20px;
             font-weight: bold;
-            color: green;
+            color: #2e8b57;
         }
-        .table-container {
-            color: white;
-             background: green;
-            border-radius: 5px;
-            padding: 10px;
-
-        }
-
     </style>
 </head>
 <body>
@@ -93,7 +85,7 @@
 
 
         <!-- Quantidade -->
-        <input type="text" id="quantidade" placeholder="Quantidade de sacas">
+        <input type="text" id="quantidade" placeholder="Qualidade de sacas">
 
 
         <!-- Qualidade (classificação de mercado) -->
@@ -110,29 +102,8 @@
 
 
         <div class="mensagem" id="mensagem"></div>
+    </div>
 
-    </div>
-                    <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Cargo</th>
-                            <th>Cultura</th>
-                            <th>Carga Horária</th>
-                            <th>Salário</th>
-                            <th>Atribuições</th>
-                            <th>Data Cadastro</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabela-funcionarios">
-                        
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
 
     <script>
         const estoque = [];
